@@ -23,11 +23,11 @@ function Header() {
                         {[
                             { name: "HOME", href: "/" },
                             { name: "ABOUT", href: "/about" },
-                            { name: "ABISSINIYA INDUSTRY AWARDS", href: "#categories" },
-                            { name: "ABISSINIYA AWARDS", href: "#gallery" },
+                            { name: "ABISSINIYA INDUSTRY AWARDS", href: "/awards/industry" },
+                            { name: "ABISSINIYA AWARDS", href: "/awards/standard" },
                             { name: "BLOGS", href: "/blogs" },
                             { name: "NEWSLETTER", href: "/newsletters" },
-                            { name: "GALLERY", href: "#gallery" },
+                            { name: "AWARDS", href: "/awards" },
                         ].map((link) => (
                             <li key={link.name}>
                                 <Link
@@ -66,11 +66,11 @@ function Header() {
                         {[
                             { name: "HOME", href: "/" },
                             { name: "ABOUT", href: "/about" },
-                            { name: "ABISSINIYA INDUSTRY AWARDS", href: "#categories" },
-                            { name: "ABISSINIYA AWARDS", href: "#gallery" },
+                            { name: "ABISSINIYA INDUSTRY AWARDS", href: "/awards/industry" },
+                            { name: "ABISSINIYA AWARDS", href: "/awards/standard" },
                             { name: "BLOGS", href: "/blogs" },
                             { name: "NEWSLETTER", href: "/newsletters" },
-                            { name: "GALLERY", href: "#gallery" },
+                            { name: "AWARDS", href: "/awards" },
                         ].map((link) => (
                             <Link
                                 key={link.name}
