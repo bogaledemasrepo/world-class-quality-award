@@ -26,7 +26,7 @@ function Header() {
                             { name: "ABISSINIYA INDUSTRY AWARDS", href: "#categories" },
                             { name: "ABISSINIYA AWARDS", href: "#gallery" },
                             { name: "BLOGS", href: "/blogs" },
-                            { name: "NEWSLETTER", href: "#registration" },
+                            { name: "NEWSLETTER", href: "/newsletters" },
                             { name: "GALLERY", href: "#gallery" },
                         ].map((link) => (
                             <li key={link.name}>
@@ -69,7 +69,7 @@ function Header() {
                             { name: "ABISSINIYA INDUSTRY AWARDS", href: "#categories" },
                             { name: "ABISSINIYA AWARDS", href: "#gallery" },
                             { name: "BLOGS", href: "/blogs" },
-                            { name: "NEWSLETTER", href: "#registration" },
+                            { name: "NEWSLETTER", href: "/newsletters" },
                             { name: "GALLERY", href: "#gallery" },
                         ].map((link) => (
                             <Link
