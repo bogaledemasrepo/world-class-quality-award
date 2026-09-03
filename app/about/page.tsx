@@ -10,8 +10,6 @@ import {
   Trophy,
   Clock,
   CheckCircle2,
-  Quote,
-  Star,
   Target,
   Sparkles,
   ShieldCheck,

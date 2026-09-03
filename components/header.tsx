@@ -25,7 +25,7 @@ function Header() {
                             { name: "ABOUT", href: "/about" },
                             { name: "ABISSINIYA INDUSTRY AWARDS", href: "#categories" },
                             { name: "ABISSINIYA AWARDS", href: "#gallery" },
-                            { name: "BLOGS", href: "#framework" },
+                            { name: "BLOGS", href: "/blogs" },
                             { name: "NEWSLETTER", href: "#registration" },
                             { name: "GALLERY", href: "#gallery" },
                         ].map((link) => (
@@ -64,11 +64,11 @@ function Header() {
                 <nav className="xl:hidden border-t border-white/10 bg-[#071d33]" aria-label="Mobile navigation">
                     <div className="max-w-295 mx-auto px-5 py-5 flex flex-col gap-4">
                         {[
-                            { name: "HOME", href: "#home" },
-                            { name: "ABOUT", href: "#about" },
+                            { name: "HOME", href: "/" },
+                            { name: "ABOUT", href: "/about" },
                             { name: "ABISSINIYA INDUSTRY AWARDS", href: "#categories" },
                             { name: "ABISSINIYA AWARDS", href: "#gallery" },
-                            { name: "BLOGS", href: "#framework" },
+                            { name: "BLOGS", href: "/blogs" },
                             { name: "NEWSLETTER", href: "#registration" },
                             { name: "GALLERY", href: "#gallery" },
                         ].map((link) => (
