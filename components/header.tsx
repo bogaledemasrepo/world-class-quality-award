@@ -42,10 +42,10 @@ function Header() {
                 </nav>
 
                 <Link
-                    href="#registration"
+                    href="/auth/login"
                     className="hidden sm:inline-flex items-center justify-center bg-[#d8a72d] hover:bg-[#f4df9c] text-[#071d33] px-4 py-3 text-xs font-bold transition-all hover:-translate-y-0.5"
                 >
-                    Sign up
+                    Sign In
                 </Link>
 
                 <button
@@ -82,11 +82,11 @@ function Header() {
                             </Link>
                         ))}
                         <Link
-                            href="#registration"
+                            href="/auth/login"
                             onClick={() => setMobileMenuOpen(false)}
                             className="inline-flex self-start items-center justify-center bg-[#d8a72d] text-[#071d33] px-4 py-3 text-xs font-bold"
                         >
-                            Sign up
+                            Sign In
                         </Link>
                     </div>
                 </nav>
