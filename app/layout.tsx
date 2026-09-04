@@ -1,4 +1,4 @@
-// src/app/layout.tsx
+import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
@@ -17,33 +17,40 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-import type { Metadata } from 'next';
+// Define your canonical site domain
+const siteUrl = "https://world-class-quality-award.vercel.app"; 
 
 export const metadata: Metadata = {
-  title: 'Grand Africa Portfolio | Innovative Digital Solutions',
-  description: 'Explore Grand Africa Portfolio - showcasing cutting-edge software development, enterprise applications, and modern web solutions across Africa.',
-  metadataBase: new URL('https://yourdomain.com'),
+  title: "Grand Africa Portfolio | Innovative Digital Solutions",
+  description:
+    "Explore Grand Africa Portfolio - showcasing cutting-edge software development, enterprise applications, and modern web solutions across Africa.",
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: 'Grand Africa Portfolio | Innovative Digital Solutions',
-    description: 'Explore Grand Africa Portfolio - showcasing cutting-edge software development, enterprise applications, and modern web solutions across Africa.',
-    url: 'https://yourdomain.com',
-    siteName: 'Grand Africa Portfolio',
+    title: "Grand Africa Portfolio | Innovative Digital Solutions",
+    description:
+      "Explore Grand Africa Portfolio - showcasing cutting-edge software development, enterprise applications, and modern web solutions across Africa.",
+    url: siteUrl,
+    siteName: "Grand Africa Portfolio",
+    locale: "en_US",
+    type: "website",
     images: [
       {
-        url: '/og-image.png', // Placed in public/og-image.png
+        url: `${siteUrl}/og-image.png`, // Absolute URL for scrapers
         width: 1200,
         height: 630,
-        alt: 'Grand Africa Portfolio Preview Banner',
+        alt: "Grand Africa Portfolio Preview Banner",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Grand Africa Portfolio | Innovative Digital Solutions',
-    description: 'Explore Grand Africa Portfolio - showcasing cutting-edge software development, enterprise applications, and modern web solutions across Africa.',
-    images: ['/og-image.png'],
+    card: "summary_large_image",
+    title: "Grand Africa Portfolio | Innovative Digital Solutions",
+    description:
+      "Explore Grand Africa Portfolio - showcasing cutting-edge software development, enterprise applications, and modern web solutions across Africa.",
+    images: [`${siteUrl}/og-image.png`], // Absolute URL for Twitter/X
   },
 };
 
