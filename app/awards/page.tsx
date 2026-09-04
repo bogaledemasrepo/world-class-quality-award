@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, Eye, X, ChevronLeft, ChevronRight, Filter } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ASSETS } from "@/constants";
 
 interface GalleryItem {
   id: string;
@@ -59,6 +61,8 @@ const GALLERY_ITEMS: GalleryItem[] = [
 
 const CATEGORIES = ["All", "Award 2012", "Award 2013"];
 
+
+
 export default function AwardsGalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
@@ -87,40 +91,66 @@ export default function AwardsGalleryPage() {
   return (
     <main className="min-h-screen bg-background text-foreground pb-20">
       {/* Header Banner */}
-      <section className="relative bg-[#071d33] text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-20 z-0">
+      <section className="relative py-28 md:py-40 flex items-center justify-center border-b border-border/50 overflow-hidden">
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute inset-0"
+        >
           <Image
-            src="https://staff.worldclassqualityaward.com/uploads/photo_2023_08_19_22_39_21_5b3b60a6de.jpg"
-            alt="Awards Background"
+            src={ASSETS.headerBg}
+            alt="World Class Quality Award Header Background"
             fill
             priority
-            className="object-cover"
+            className="object-cover brightness-[0.25]"
           />
-        </div>
-        <div className="absolute inset-0 bg-linear-to-t from-[#071d33] via-[#071d33]/80 to-transparent z-10" />
+        </motion.div>
 
-        <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center space-y-4">
-          <nav className="flex justify-center items-center gap-2 text-sm text-gray-300">
-            <Link href="/" className="hover:text-primary transition-colors">
+        {/* Glow backdrop */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 blur-[120px] pointer-events-none rounded-full" />
+
+        <div className="relative z-10 container mx-auto px-4 text-center space-y-4">
+
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-slate-300 text-sm md:text-base font-medium gap-2"
+          >
+            {/* Home <span className="text-primary mx-2">/</span> <span className="text-white">About Us</span> */}
+               <Link href="/" className="hover:text-primary transition-colors">
               Home
             </Link>
-            <span>/</span>
+            <span className="mx-2">/</span>
             <span className="text-primary font-medium">Award Designs</span>
-          </nav>
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight"
+          >
+            Award Gallery & Designs
+          </motion.h1>
 
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Award <span className="text-primary">Gallery & Designs</span>
-          </h1>
-          <p className="max-w-2xl mx-auto text-gray-300 text-base md:text-lg">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+           <p className="max-w-2xl mx-auto text-gray-300 text-base md:text-lg">
             Explore our archive of officially certified awards, laurel medallions, and institutional recognition plaques over the years.
           </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Main Gallery Section */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl space-y-10">
-          
+
           {/* Category Filter Tabs */}
           <div className="flex items-center justify-center">
             <div className="inline-flex items-center gap-2 p-1.5 rounded-2xl bg-card border border-border shadow-sm">
@@ -129,11 +159,10 @@ export default function AwardsGalleryPage() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                    selectedCategory === cat
-                      ? "bg-primary text-primary-foreground shadow-md"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                  }`}
+                  className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${selectedCategory === cat
+                    ? "bg-primary text-primary-foreground shadow-md"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
                 >
                   {cat}
                 </button>

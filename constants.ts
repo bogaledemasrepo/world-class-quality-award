@@ -90,3 +90,15 @@
       image: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=600&q=80",
     },
   ];
+
+  export const ASSETS = {
+    headerBg: "https://staff.worldclassqualityaward.com/uploads/photo_2023_08_19_22_39_21_5b3b60a6de.jpg",
+    heroSection: "https://staff.worldclassqualityaward.com/uploads/hero_carousel_2_299dce3389.jpg",
+    whoWeAre: "https://staff.worldclassqualityaward.com/uploads/hero_carousel_3_66bec2cee7.jpg",
+    whatWeDo: "https://staff.worldclassqualityaward.com/uploads/hero_carousel_5_c3e9100054.jpg",
+    testimonials: {
+      lemmaGuya: "https://staff.worldclassqualityaward.com/uploads/lemaguya_Painter_fe53cc6a86.jpg",
+      mulatuAstatke: "https://staff.worldclassqualityaward.com/uploads/mulatu_e9471c4723.jpg",
+      belayAbegaz: "https://staff.worldclassqualityaward.com/uploads/download_1_b2a70c9e0d.jpg",
+    },
+  };

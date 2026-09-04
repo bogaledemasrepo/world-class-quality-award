@@ -16,6 +16,7 @@ import {
   Filter,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ASSETS } from "@/constants";
 
 interface Article {
   id: string;
@@ -135,39 +136,65 @@ export default function NewsletterPage() {
   return (
     <main className="min-h-screen bg-background text-foreground pb-20">
       {/* Hero Header Banner */}
-      <section className="relative bg-[#071d33] text-white py-20 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-20 z-0">
+      <section className="relative py-28 md:py-40 flex items-center justify-center border-b border-border/50 overflow-hidden">
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute inset-0"
+        >
           <Image
-            src="https://staff.worldclassqualityaward.com/uploads/photo_2023_08_19_22_39_21_5b3b60a6de.jpg"
-            alt="Newsletter Header Background"
+            src={ASSETS.headerBg}
+            alt="World Class Quality Award Header Background"
             fill
             priority
-            className="object-cover"
+            className="object-cover brightness-[0.25]"
           />
-        </div>
-        <div className="absolute inset-0 bg-linear-to-t from-[#071d33] via-[#071d33]/80 to-transparent z-10" />
+        </motion.div>
 
-        <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center space-y-4">
-          <nav className="flex justify-center items-center gap-2 text-sm text-gray-300">
+        {/* Glow backdrop */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 blur-[120px] pointer-events-none rounded-full" />
+
+        <div className="relative z-10 container mx-auto px-4 text-center space-y-4">
+
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-slate-300 text-sm md:text-base font-medium gap-2"
+          >
+            {/* Home <span className="text-primary mx-2">/</span> <span className="text-white">About Us</span> */}
             <Link href="/" className="hover:text-primary transition-colors">
               Home
             </Link>
-            <span>/</span>
+            <span className="mx-2">/</span>
             <span className="text-primary font-medium">Newsletter & Press</span>
-          </nav>
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight"
+          >
+            News & Announcements
+          </motion.h1>
 
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            News & <span className="text-primary">Announcements</span>
-          </h1>
-          <p className="max-w-2xl mx-auto text-gray-300 text-base md:text-lg">
-            Stay informed with official press releases, award announcements, and upcoming competition deadlines.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <p className="max-w-2xl mx-auto text-gray-300 text-base md:text-lg">
+              Stay informed with official press releases, award announcements, and upcoming competition deadlines.
+            </p>
+          </motion.div>
         </div>
       </section>
-
+      
       <section className="py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl space-y-12">
-          
+
           {/* Top Search & Filter Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 p-4 rounded-2xl bg-card border border-border shadow-sm">
             {/* Category Filter Pills */}
@@ -177,11 +204,10 @@ export default function NewsletterPage() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
-                    activeCategory === cat
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${activeCategory === cat
                       ? "bg-primary text-primary-foreground shadow-sm"
                       : "bg-muted text-muted-foreground hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   {cat}
                 </button>
@@ -253,7 +279,7 @@ export default function NewsletterPage() {
 
           {/* Main Layout: Articles Feed (Left) & Award Winners Sidebar (Right) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-            
+
             {/* Left Content Area: News Articles Grid */}
             <div className="lg:col-span-8 space-y-8">
               <div className="flex items-center justify-between border-b border-border/80 pb-4">
@@ -322,7 +348,7 @@ export default function NewsletterPage() {
 
             {/* Right Sidebar: Winners Directories */}
             <aside className="lg:col-span-4 space-y-8">
-              
+
               {/* World Class Quality Award Winners Card */}
               <div className="bg-card border border-border rounded-2xl p-6 shadow-sm space-y-5">
                 <div className="flex items-center justify-between border-b border-border/80 pb-3">
