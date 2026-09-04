@@ -106,7 +106,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <Link
-              href="#get-started"
+              href="/auth/register"
               className="inline-block bg-[#d8a72d] hover:bg-[#c39422] text-[#071d33] font-semibold px-8 py-3.5 rounded-md transition-all duration-300 shadow-lg hover:scale-105"
             >
               Get Started

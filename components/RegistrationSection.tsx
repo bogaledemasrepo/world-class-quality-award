@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function RegistrationSection() {
   return (
@@ -11,7 +12,7 @@ export function RegistrationSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Column: Info Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -71,14 +72,14 @@ export function RegistrationSection() {
                     // Handle registration action
                   }}
                   className="space-y-4 pt-2"
-                >
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-[#feb900] hover:bg-[#e0a400] text-black font-semibold py-6 text-base rounded-xl shadow-md transition-all hover:scale-[1.01]"
-                  >
-                    Get Registered <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
+                ><Link href="/auth/register" className="w-full">
+                    <Button
+                      type="submit"
+                      className="w-full bg-[#feb900] hover:bg-[#e0a400] text-black font-semibold py-6 text-base rounded-xl shadow-md transition-all hover:scale-[1.01]"
+                    >
+                      Get Registered <ArrowRight className="ml-2 h-5 w-5" />
+
+                    </Button></Link>
                 </form>
               </div>
             </div>
