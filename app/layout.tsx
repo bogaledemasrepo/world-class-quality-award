@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/og-image.png`, // Absolute URL for scrapers
+        url: `/og-image.png`, // Absolute URL for scrapers
         width: 1200,
         height: 630,
         alt: "Grand Africa Portfolio Preview Banner",
