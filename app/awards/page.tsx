@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Award, Eye, X, ChevronLeft, ChevronRight, Filter } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ASSETS } from "@/constants";
+import EventsSection from "@/components/EventsSection";
 
 interface GalleryItem {
   id: string;
@@ -269,6 +270,7 @@ export default function AwardsGalleryPage() {
           </motion.div>
         )}
       </AnimatePresence>
+      <EventsSection />
     </main>
   );
 }
