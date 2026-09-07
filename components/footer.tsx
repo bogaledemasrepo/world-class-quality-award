@@ -26,7 +26,7 @@ function Footer() {
           <h3 className="text-[#f4df9c] font-bold uppercase tracking-[0.15em]">Quick Links</h3>
           <nav className="mt-5" aria-label="Footer navigation">
             <ul className="space-y-3 text-white/75">
-              {[{link:"#",title:"About the Award"}, {link:"#",title:"How the Award Works"}, {link:"/#categories",title:"Award Categories"}, {link:"/awards",title:"Award Gallery"}].map(
+              {[{link:"#",title:"About the Award"}, {link:"/about/#how-it-works",title:"How the Award Works"}, {link:"/#categories",title:"Award Categories"}, {link:"/awards",title:"Award Gallery"}].map(
                 (item) => (
                   <li key={item.title}>
                     <Link href={item.link} className="hover:text-[#f4df9c] transition-colors">

@@ -38,15 +38,15 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black text-white py-20">
-      {/* Background Image Carousel with Cross-Fade */}
-      <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="popLayout">
+    {/* Background Image Carousel with Cross-Fade */ }
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <AnimatePresence mode="sync">
           <MotionImage
             key={currentIndex}
             src={CAROUSEL_IMAGES[currentIndex]}
             alt={`Hero slide ${currentIndex + 1}`}
             fill
-            priority
+            priority={currentIndex === 0}
             sizes="100vw"
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -57,14 +57,14 @@ export function Hero() {
         </AnimatePresence>
 
         {/* Dark Overlay for Text Legibility */}
-        <div className="absolute inset-0 bg-black/60 z-10" />
+        <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none" />
       </div>
 
       {/* Foreground Content with Staggered Entrance Animations */}
       <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
-           
+
         <div className="max-w-3xl mx-auto text-center">
-                 {/* Badge */}
+          {/* Badge */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -78,7 +78,7 @@ export function Hero() {
               <Award className="mr-2 h-4 w-4 inline" /> Higher Honor Laureate
             </Badge>
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -141,15 +141,14 @@ export function Hero() {
             key={idx}
             onClick={() => setCurrentIndex(idx)}
             aria-label={`Go to slide ${idx + 1}`}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              currentIndex === idx
+            className={`h-2.5 rounded-full transition-all duration-300 ${currentIndex === idx
                 ? "w-8 bg-[#d8a72d]"
                 : "w-2.5 bg-white/50 hover:bg-white/80"
-            }`}
+              }`}
           />
         ))}
       </div>
-         
+
     </section>
   );
 }

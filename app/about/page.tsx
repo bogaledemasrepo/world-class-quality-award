@@ -16,6 +16,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import Testimonials from "@/components/testimonials";
+import HowItWorksSection from "@/components/how-it-works";
 
 // Image Assets
 const ASSETS = {
@@ -329,7 +330,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6. Testimonials Section */}
-      <Testimonials />
+      <HowItWorksSection />
     </div>
   );
 }

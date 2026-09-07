@@ -241,6 +241,8 @@ export default function NewsletterPage() {
                     src={featuredArticle.image}
                     alt={featuredArticle.title}
                     fill
+                    loading="eager"
+                    sizes="100%"
                     priority
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -369,6 +371,7 @@ export default function NewsletterPage() {
                           src={winner.image}
                           alt={winner.name}
                           fill
+                          sizes="100%"
                           className="object-cover"
                         />
                       </div>
@@ -413,6 +416,7 @@ export default function NewsletterPage() {
                           src={winner.image}
                           alt={winner.name}
                           fill
+                          sizes="100%"
                           className="object-cover"
                         />
                       </div>
@@ -442,13 +446,13 @@ export default function NewsletterPage() {
       </section>
 
       {/* Floating Donate Action Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      {/* <div className="fixed bottom-6 right-6 z-50">
         <Link href="/Donate">
           <Button className="rounded-full shadow-2xl bg-amber-500 hover:bg-amber-600 text-black font-semibold px-5 py-6 gap-2 hover:scale-105 transition-all">
             <HeartHandshake className="w-5 h-5" /> Donate Now
           </Button>
         </Link>
-      </div>
+      </div> */}
     </main>
   );
 }
