@@ -54,7 +54,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="w-10 h-10 border border-white/20 grid place-items-center hover:bg-white hover:text-[#071d33] transition-colors"
+              className="w-10 h-10 rounded-sm border border-white/20 grid place-items-center hover:bg-white hover:text-[#071d33] transition-colors"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20.447 20.452h-3.551v-5.569c0-1.328-.027-3.097-1.858-3.097-1.853 0-2.134 1.447-2.134 2.939v5.667H9.351V9h3.414v1.331h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.268 2.358 4.268 5.42v6.435z" />
@@ -63,7 +63,7 @@ function Footer() {
             <Link
               href="mailto:worldclassqualityaward@gmail.com"
               aria-label="Email the award team"
-              className="w-10 h-10 border border-white/20 grid place-items-center hover:bg-white hover:text-[#071d33] transition-colors"
+              className="w-10 h-10 rounded-sm border border-white/20 grid place-items-center hover:bg-white hover:text-[#071d33] transition-colors"
             >
               <Mail className="w-4 h-4" />
             </Link>

@@ -27,7 +27,7 @@ export default function HowItWorksSection() {
             <Award className="w-4 h-4" />
             <span>Methodology & Standards</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">
             How World Class Quality Award Works
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
@@ -47,7 +47,7 @@ export default function HowItWorksSection() {
             className="lg:col-span-6 space-y-8"
           >
             <div className="space-y-3">
-              <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
+              <h3 className="text-2xl font-bold text-foreground">
                 World Class Quality Award at a Glance
               </h3>
               <div className="h-1 w-20 bg-primary rounded-full" />

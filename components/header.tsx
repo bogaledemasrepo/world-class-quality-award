@@ -8,8 +8,8 @@ import React, { useState } from "react";
 const NAV_LINKS = [
   { name: "HOME", href: "/" },
   { name: "ABOUT", href: "/about" },
-  { name: "ABISSINIYA INDUSTRY AWARDS", href: "/awards/industry" },
-  { name: "ABISSINIYA AWARDS", href: "/awards/standard" },
+  // { name: "ABISSINIYA INDUSTRY AWARDS", href: "/awards/industry" },
+  // { name: "ABISSINIYA AWARDS", href: "/awards/standard" },
   { name: "BLOGS", href: "/blogs" },
   { name: "NEWSLETTER", href: "/newsletters" },
   { name: "AWARDS", href: "/awards" },
@@ -43,7 +43,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden xl:block" aria-label="Primary navigation">
+        <nav className="hidden min-[900px]:block" aria-label="Primary navigation">
           <ul className="flex items-center gap-6">
             {NAV_LINKS.map((link) => {
               const active = isActive(link.href);
@@ -84,7 +84,7 @@ export default function Header() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           type="button"
-          className="xl:hidden p-3 -mr-2 text-white hover:text-[#f4df9c] focus:outline-none focus:ring-2 focus:ring-[#f4df9c] rounded-md transition-colors"
+          className="min-[900px]:hidden p-3 -mr-2 text-white hover:text-[#f4df9c] focus:outline-none focus:ring-2 focus:ring-[#f4df9c] rounded-md transition-colors"
           aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={mobileMenuOpen}
         >
@@ -94,7 +94,7 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       {mobileMenuOpen && (
-        <nav className="xl:hidden border-t border-white/10 bg-[#071d33] animate-in slide-in-from-top-2 duration-200" aria-label="Mobile navigation">
+        <nav className="min-[900px]:hidden border-t border-white/10 bg-[#071d33] animate-in slide-in-from-top-2 duration-200" aria-label="Mobile navigation">
           <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
             {NAV_LINKS.map((link) => {
               const active = isActive(link.href);

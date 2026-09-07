@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Testimonials from "@/components/testimonials";
 import HowItWorksSection from "@/components/how-it-works";
+import WhatMakesUsDifferentSection from "@/components/whate-make-us-defferent";
 
 // Image Assets
 const ASSETS = {
@@ -156,7 +157,7 @@ export default function AboutPage() {
           >
             <motion.div variants={fadeIn} className="space-y-2">
               <span className="text-primary text-xs font-bold tracking-widest uppercase">Our Legacy</span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">World Class Quality Award</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">World Class Quality Award</h2>
             </motion.div>
 
             <motion.p variants={fadeIn} className="text-muted-foreground leading-relaxed text-justify">
@@ -197,7 +198,7 @@ export default function AboutPage() {
                   <div className="p-3.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <span className="text-3xl md:text-5xl font-black text-foreground tracking-tight">{stat.value}</span>
+                  <span className="text-3xl md:text-4xl font-black text-foreground tracking-tight">{stat.value}</span>
                   <span className="text-xs md:text-sm text-muted-foreground font-medium">{stat.label}</span>
                 </motion.div>
               );
@@ -283,6 +284,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <HowItWorksSection />
+      <WhatMakesUsDifferentSection />
       {/* 5. Mission & Core Values */}
       <section className="py-20 bg-card border-y border-border/60">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -328,9 +331,6 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* 6. Testimonials Section */}
-      <HowItWorksSection />
     </div>
   );
 }
